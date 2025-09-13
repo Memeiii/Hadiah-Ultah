@@ -34,11 +34,11 @@
           <!-- musik player-->
           <div
             id="music-player-box"
-            class="flex items-center justify-center bg-green-100 p-2 rounded-full shadow-inner gap-3 w-full max-w-xs"
+            class="flex items-center bg-green-100 p-2 rounded-full shadow-inner gap-3 w-full max-w-xs overflow-hidden"
           >
             <button
               id="play-pause-btn"
-              class="bg-white p-3 rounded-full shadow-md focus:outline-none transform hover:scale-110 transition-transform"
+              class="bg-white p-3 rounded-full shadow-md focus:outline-none transform hover:scale-110 transition-transform flex-shrink-0"
             >
               <svg
                 id="play-icon"
@@ -57,12 +57,14 @@
                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
               </svg>
             </button>
-            <p
-              id="music-text"
-              class="text-sm font-semibold text-green-800 pr-2 select-none"
-            >
-              Play our song
-            </p>
+            <div class="flex-grow overflow-hidden">
+              <p
+                id="music-text"
+                class="text-sm font-semibold text-green-800 select-none whitespace-nowrap"
+              >
+                Play our song
+              </p>
+            </div>
           </div>
           <!-- Hidden Audio Element -->
           <audio id="bg-music" autoplay loop>
@@ -74,14 +76,13 @@
         </div>
         <div class="text-left">
           <p class="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
-            Halo clara. <br />
-            Ini aku, Meikel. <br />
+            Halo Clara, ini aku, Meikel. <br />
             Aku senang bisa kenal sama kamu. <br />
-            Ntah aku udah tersesat berapa lama, sampai akhirnya aku ketemu kamu.
-            <br />
-            Aku senang, karena setiap aku sedih , kamu ada. <br />
-            Aku bangga punya kamu claraaa. <br />
-            Makasih ya, udah nemenin aku main genshin.
+            Entah udah berapa lama aku tersesat, sampai akhirnya aku ketemu
+            kamu. <br />
+            Aku senang, karena setiap aku sedih, kamu selalu ada. <br />
+            Aku bangga sama kamu, Clara. <br />
+            Makasih ya, udah nemenin aku selama ini.
           </p>
           <p class="text-md text-gray-600 font-semibold">
             - Dengan cinta, Meikel -

@@ -3,31 +3,59 @@ const playPauseBtn = document.getElementById("play-pause-btn");
 const playIcon = document.getElementById("play-icon");
 const pauseIcon = document.getElementById("pause-icon");
 const musicText = document.getElementById("music-text");
-music
+const musicPlayerBox = document.getElementById("music-player-box");
 
-  .play()
-  .then(() => {
-    // autoplay musik
-    playIcon.classList.add("hidden");
-    pauseIcon.classList.remove("hidden");
-    musicText.textContent = "Now Playing...";
-  })
-  .catch(() => {
-    console.log("Autoplay was prevented. Please click to play.");
-  });
-
-playPauseBtn.addEventListener("click", () => {
+const togglePlayPause = () => {
   if (music.paused) {
     music.play();
     playIcon.classList.add("hidden");
     pauseIcon.classList.remove("hidden");
-    musicText.textContent = "Now Playing...";
+    musicText.textContent = "wave to earth - love";
+    musicPlayerBox.classList.add("playing");
+    musicText.classList.add("marquee");
   } else {
     music.pause();
     playIcon.classList.remove("hidden");
     pauseIcon.classList.add("hidden");
     musicText.textContent = "Play our song";
+    musicPlayerBox.classList.remove("playing");
+    musicText.classList.remove("marquee");
   }
+};
+
+playPauseBtn.addEventListener("click", togglePlayPause);
+
+// Initial state setup
+const setupMusic = () => {
+  // Default to paused state
+  let isPlaying = !music.paused;
+
+  if (isPlaying) {
+    playIcon.classList.add("hidden");
+    pauseIcon.classList.remove("hidden");
+    musicText.textContent = "wave to earth - love";
+    musicPlayerBox.classList.add("playing");
+    musicText.classList.add("marquee");
+  } else {
+    playIcon.classList.remove("hidden");
+    pauseIcon.classList.add("hidden");
+    musicText.textContent = "Play our song";
+    musicPlayerBox.classList.remove("playing");
+    musicText.classList.remove("marquee");
+  }
+};
+
+// Try to play music and set up UI
+music.play().then(() => {
+  setupMusic();
+}).catch((error) => {
+  console.log("Autoplay was prevented by the browser.", error);
+  setupMusic();
+});
+
+// Also set up on load as a fallback
+window.addEventListener('load', () => {
+    setTimeout(setupMusic, 100);
 });
 
 let slideIndex = 1;

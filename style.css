@@ -23,3 +23,26 @@
 .dot {
   transition: all 0.3s ease-in-out;
 }
+
+#music-player-box {
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#music-player-box.playing {
+  transform: translateX(8px);
+}
+
+.marquee {
+  display: inline-block;
+  animation: marquee 7s linear infinite;
+  padding-left: 100%; /* Start the text off-screen */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%); /* Move it across the container */
+  }
+}
