@@ -9,6 +9,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body
     class="bg-gradient-to-br from-green-200 to-teal-200 flex justify-center items-center min-h-screen p-4"
@@ -29,7 +31,7 @@
             alt="Foto Kenangan"
             class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-green-400 shadow-lg -rotate-90"
           />
-          <!-- Cute Music Player -->
+          <!-- musik player-->
           <div
             id="music-player-box"
             class="flex items-center justify-center bg-green-100 p-2 rounded-full shadow-inner gap-3 w-full max-w-xs"
@@ -72,78 +74,112 @@
         </div>
         <div class="text-left">
           <p class="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
-            Setiap momen bersamamu adalah kenangan indah yang tak terlupakan.
-            Dari tawa lepas hingga cerita-cerita malam, semuanya menjadi bagian
-            dari perjalanan kita. Terima kasih sudah hadir dan mewarnai
-            hari-hariku.
+            Halo clara. <br />
+            Ini aku, Meikel. <br />
+            Aku senang bisa kenal sama kamu. <br />
+            Ntah aku udah tersesat berapa lama, sampai akhirnya aku ketemu kamu.
+            <br />
+            Aku senang, karena setiap aku sedih , kamu ada. <br />
+            Aku bangga punya kamu claraaa. <br />
+            Makasih ya, udah nemenin aku main genshin.
           </p>
           <p class="text-md text-gray-600 font-semibold">
-            - Dengan cinta, Meiii -
+            - Dengan cinta, Meikel -
           </p>
         </div>
       </div>
 
-      <!-- Galeri Kenangan Lanjutan -->
+      <!-- foto kenangan -->
       <div class="mt-12 border-t-2 border-green-100 pt-8">
-        <h2 class="text-3xl font-bold text-green-700 mb-6">
-          Beberapa Momen Lainnya...
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <!-- Ganti src dengan path gambar Anda -->
-          <img
-            src="https://images.pexels.com/photos/3771836/pexels-photo-3771836.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="Kenangan 1"
-            class="w-full h-40 object-cover rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-          />
-          <!-- Ganti src dengan path gambar Anda -->
-          <img
-            src="https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="Kenangan 2"
-            class="w-full h-40 object-cover rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-          />
-          <!-- Ganti src dengan path gambar Anda -->
-          <img
-            src="https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="Kenangan 3"
-            class="w-full h-40 object-cover rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-          />
+        <h2 class="text-3xl font-bold text-green-700 mb-6">Me & You</h2>
+        <!-- slide -->
+        <div id="slideshow-container" class="max-w-lg relative mx-auto">
+          <!-- img -->
+          <div class="mySlides hidden our-work-fade">
+            <img
+              src="asset/gambar1.jpg"
+              class="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+
+          <div class="mySlides hidden our-work-fade">
+            <img
+              src="asset/gambar2.jpg"
+              class="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+
+          <div class="mySlides hidden our-work-fade">
+            <img
+              src="asset/gambar3.jpg"
+              class="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+
+          <div class="mySlides hidden our-work-fade">
+            <img
+              src="asset/gambar4.jpg"
+              class="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+
+          <div class="mySlides hidden our-work-fade">
+            <img
+              src="asset/gambar5.jpg"
+              class="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+
+          <div class="mySlides hidden our-work-fade">
+            <img
+              src="asset/gambar6.jpg"
+              class="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+          </div>
+
+          <!-- next button -->
+          <a
+            class="absolute top-1/2 w-auto -mt-8 p-4 text-white font-bold text-2xl transition duration-500 ease-in-out rounded-r-md select-none cursor-pointer hover:bg-black/50"
+            style="left: 0"
+            onclick="plusSlides(-1)"
+            >&#10094;</a
+          >
+          <a
+            class="absolute top-1/2 w-auto -mt-8 p-4 text-white font-bold text-2xl transition duration-500 ease-in-out right-0 rounded-l-md select-none cursor-pointer hover:bg-black/50"
+            onclick="plusSlides(1)"
+            >&#10095;</a
+          >
+        </div>
+        <br />
+
+        <!-- dots -->
+        <div class="text-center">
+          <span
+            class="dot cursor-pointer h-4 w-4 mx-1 bg-gray-400 rounded-full inline-block transition-colors duration-500 ease-in-out"
+            onclick="currentSlide(1)"
+          ></span>
+          <span
+            class="dot cursor-pointer h-4 w-4 mx-1 bg-gray-400 rounded-full inline-block transition-colors duration-500 ease-in-out"
+            onclick="currentSlide(2)"
+          ></span>
+          <span
+            class="dot cursor-pointer h-4 w-4 mx-1 bg-gray-400 rounded-full inline-block transition-colors duration-500 ease-in-out"
+            onclick="currentSlide(3)"
+          ></span>
+          <span
+            class="dot cursor-pointer h-4 w-4 mx-1 bg-gray-400 rounded-full inline-block transition-colors duration-500 ease-in-out"
+            onclick="currentSlide(4)"
+          ></span>
+          <span
+            class="dot cursor-pointer h-4 w-4 mx-1 bg-gray-400 rounded-full inline-block transition-colors duration-500 ease-in-out"
+            onclick="currentSlide(5)"
+          ></span>
+          <span
+            class="dot cursor-pointer h-4 w-4 mx-1 bg-gray-400 rounded-full inline-block transition-colors duration-500 ease-in-out"
+            onclick="currentSlide(6)"
+          ></span>
         </div>
       </div>
     </div>
-    <script>
-      const music = document.getElementById("bg-music");
-      const playPauseBtn = document.getElementById("play-pause-btn");
-      const playIcon = document.getElementById("play-icon");
-      const pauseIcon = document.getElementById("pause-icon");
-      const musicText = document.getElementById("music-text");
-
-      // Update UI based on autoplay status
-      music
-        .play()
-        .then(() => {
-          // Autoplay started
-          playIcon.classList.add("hidden");
-          pauseIcon.classList.remove("hidden");
-          musicText.textContent = "Now Playing...";
-        })
-        .catch(() => {
-          // Autoplay failed
-          console.log("Autoplay was prevented. Please click to play.");
-        });
-
-      playPauseBtn.addEventListener("click", () => {
-        if (music.paused) {
-          music.play();
-          playIcon.classList.add("hidden");
-          pauseIcon.classList.remove("hidden");
-          musicText.textContent = "Now Playing...";
-        } else {
-          music.pause();
-          playIcon.classList.remove("hidden");
-          pauseIcon.classList.add("hidden");
-          musicText.textContent = "Play our song";
-        }
-      });
-    </script>
   </body>
 </html>
